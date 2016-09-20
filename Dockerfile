@@ -32,9 +32,7 @@ RUN curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/dow
  && chmod +x /usr/local/bin/gosu
 
 # This will use the latest release
-RUN wget -O /usr/local/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-latest \
- && chmod +x /usr/local/bin/docker \
- && groupadd docker
+RUN curl -fsSL https://get.docker.com/ | sh
 
 ENV LANG       en_US.UTF-8
 ENV LC_ALL     en_US.UTF-8
